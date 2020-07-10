@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import M from 'materialize-css'
 import {useHistory} from 'react-router-dom'
+import Dropdown from './dropdown'
 const CretePost = ()=>{
     const history = useHistory()
     const [title,setTitle] = useState("")
@@ -68,15 +69,17 @@ const CretePost = ()=>{
        >
            <input 
            type="text"
-            placeholder="Title"
+            placeholder="Skill"
             value={title}
             onChange={(e)=>setTitle(e.target.value)}
             />
+            
            <input
-            type="text"
-             placeholder="Body"
+            type="textarea"
+             placeholder="Your Story"
              value={body}
             onChange={(e)=>setBody(e.target.value)}
+            style={{width: '100%', height: '100px', margin:'0'}}
              />
            <div className="file-field input-field">
             <div className="btn #64b5f6 blue darken-1">

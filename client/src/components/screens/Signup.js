@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import {Link,useHistory} from 'react-router-dom'
 import M from 'materialize-css'
-import logo from '../../hookup.png'
+import logo from '../../dream-up.png'
 const SignIn  = ()=>{
     const history = useHistory()
     const [name,setName] = useState("")
@@ -76,6 +76,7 @@ const SignIn  = ()=>{
                <img style={{width: '500px', height: '500px'}} src={logo} ></img>
            </div>
        </div>
+       
       <div className="mycard">
           <div className="card auth-card input-field">
                  <h2>HOOK-UP</h2>

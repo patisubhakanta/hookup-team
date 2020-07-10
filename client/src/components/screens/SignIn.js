@@ -39,8 +39,8 @@ const SignIn  = ()=>{
         })
     }
    return (
-      <div className="mycard">
-          <div className="card auth-card input-field">
+      <div >
+          <div className=" auth-card input-field">
             <h2>HOOK-UP</h2>
             <input
             type="text"
