@@ -117,7 +117,7 @@ const Home  = ()=>{
            {
                data.map(item=>{
                    return(
-                       <div className="card home-card "  key={item._id} style={{padding:"7px"}}  >
+                       <div className=" home-card "  key={item._id} style={{padding:"7px",borderRadius:'13px'}}  >
                             <h5 style={{padding:"5px"}}><Link to={item.postedBy._id !== state._id?"/profile/"+item.postedBy._id :"/profile"  }>{item.postedBy.name}</Link> {item.postedBy._id == state._id 
                             && <i className="material-icons" style={{
                                 float:"right"
@@ -128,7 +128,7 @@ const Home  = ()=>{
                             }</h5>
                             <h5> <i style={{fontFamily: "sans-serif"}}>Skill</i> : <span style={{color: "blue"}}>#{item.title}</span> </h5>
                             <div className="card-image">
-                                <img  style={{width: '100%', height: '140px'}}src={item.photo}/>
+                                <img  style={{width: '100%', height: '200px'}}src={item.photo}/>
                             </div>
                             <div className="card-content">
                             

@@ -60,7 +60,7 @@ const NavBar = ()=>{
     return(
         <nav >
         <div className="nav-wrapper" style={{backgroundColor:"#fafafa"}}>
-          <Link to={state?"/":"/signin"} className="brand-logo left">HOOK-UP</Link>
+          <Link to={state?"/":"/signin"} className=" left" style={{fontSize:'35px',fontFamily:'Comic Sans MS'}}>HOOK-UP</Link>
           <ul id="nav-mobile" className="right">
              {renderList()}
   
