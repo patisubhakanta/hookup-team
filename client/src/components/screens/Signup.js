@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import {Link,useHistory} from 'react-router-dom'
 import M from 'materialize-css'
-import logo from '../../dream-up.png'
+import logo from '../../dream-up (2).png'
+import {Helmet} from 'react-helmet';
 const SignIn  = ()=>{
     const history = useHistory()
     const [name,setName] = useState("")
@@ -71,6 +72,9 @@ const SignIn  = ()=>{
 
    return (
        <div className="side , mycard" style={{display:'flex', flexDirection:'row' , justifyContent:'space-around' }}>
+           <Helmet>
+                <style>{'body { background-color: #f5f0f0; }'}</style>
+            </Helmet>
        <div>
            <div>
                <img style={{width: '500px', height: '500px'}} src={logo} ></img>

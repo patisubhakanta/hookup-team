@@ -2,6 +2,7 @@ import React,{useState,useContext,} from 'react'
 import {Link,useHistory} from 'react-router-dom'
 import {UserContext} from '../../App'
 import M from 'materialize-css'
+import {Helmet} from 'react-helmet'
 const SignIn  = ()=>{
     const {state,dispatch} = useContext(UserContext)
     const history = useHistory()
@@ -40,6 +41,9 @@ const SignIn  = ()=>{
     }
    return (
       <div >
+          <Helmet>
+                <style>{'body { background-color: #f5f0f0; }'}</style>
+            </Helmet>
           <div className=" auth-card input-field">
             <h2>HOOK-UP</h2>
             <input
