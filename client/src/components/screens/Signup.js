@@ -81,8 +81,8 @@ const SignIn  = ()=>{
            </div>
        </div>
        
-      <div className="mycard">
-          <div className="card auth-card input-field">
+      <div className="mycard" >
+          <div className="auth-card input-field" style={{backgroundColor: "#f5f0f0"}}>
                  <h2>HOOK-UP</h2>
                 <input
                 type="text"
