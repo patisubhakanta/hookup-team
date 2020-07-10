@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import M from 'materialize-css'
 import {useHistory} from 'react-router-dom'
-import Dropdown from './dropdown'
+import {Helmet} from 'react-helmet';
+
 const CretePost = ()=>{
     const history = useHistory()
     const [title,setTitle] = useState("")
@@ -64,9 +65,14 @@ const CretePost = ()=>{
            margin:"30px auto",
            maxWidth:"500px",
            padding:"20px",
-           textAlign:"center"
+           textAlign:"center",
+           backgroundColor:'#f5f0f0'
        }}
+       
        >
+           <Helmet>
+                <style>{'body { background-color: #f5f0f0; }'}</style>
+            </Helmet>
            <input 
            type="text"
             placeholder="Skill"

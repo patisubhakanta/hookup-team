@@ -1,6 +1,8 @@
 import React,{useState,useEffect,useContext} from 'react'
 import {UserContext} from '../../App'
 import {Link} from 'react-router-dom'
+import {Helmet} from 'react-helmet';
+import ReadMoreReact from 'read-more-react'
 const Home  = ()=>{
     const [data,setData] = useState([])
     const {state,dispatch} = useContext(UserContext)
@@ -110,7 +112,15 @@ const Home  = ()=>{
         })
     }
    return (
-       <div className="home">
+       <div className="home" 
+       style={{display:'grid', 
+       gridTemplateColumns:'300px 300px 300px' ,
+       gridGap:'150px', 
+       justifyItems:'center',
+       marginLeft:"100px" }}>
+           <Helmet>
+                <style>{'body { background-color: #f5f0f0; }'}</style>
+            </Helmet>
            {
                data.map(item=>{
                    return(
@@ -123,8 +133,9 @@ const Home  = ()=>{
                             >delete</i>
 
                             }</h5>
+                            <h5> <i style={{fontFamily: "sans-serif"}}>Skill</i> : <span style={{color: "blue"}}>#{item.title}</span> </h5>
                             <div className="card-image">
-                                <img style={{width: '500px', height: '400px'}} src={item.photo}/> 
+                                <img style={{width: '100%', height: '140px'}} src={item.photo}/> 
                             </div>
                             <div className="card-content">
                             <i className="material-icons" style={{color:"red"}}>favorite</i>
@@ -141,8 +152,14 @@ const Home  = ()=>{
                             
                            
                                 <h6>{item.likes.length} likes</h6>
-                                <h6>{item.title}</h6>
-                                <p>{item.body}</p>
+                                
+                                <p>
+                                <ReadMoreReact text={item.body}
+                                        min={10}
+                                        ideal={15}
+                                        max={100}
+                                        readMoreText="Read more"/>
+                                </p>
                                 {
                                     item.comments.map(record=>{
                                         return(

@@ -1,5 +1,6 @@
 import React,{useEffect,useState,useContext} from 'react'
 import {UserContext} from '../../App'
+import {Helmet} from 'react-helmet';
 
 const Profile  = ()=>{
     const [mypics,setPics] = useState([])
@@ -65,6 +66,9 @@ const Profile  = ()=>{
                         margin:"18px 0px",
                         borderBottom:"1px solid grey"
                     }}>
+                        <Helmet>
+                            <style>{'body { background-color: #f5f0f0; }'}</style>
+                        </Helmet>
 
                     
                     <div style={{
