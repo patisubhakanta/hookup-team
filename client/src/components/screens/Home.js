@@ -153,6 +153,11 @@ const Home  = ()=>{
                                         max={100}
                                         readMoreText="Read more"/>
                                         </p>
+                                {
+                                    item.title =="painting" || item.title== "Painting" || item.title== "PAINTING" ? 
+                                    <button className="btn waves-effect waves-light #64b5f6 red darken-1">Buy It</button> :
+                                    <button className="btn waves-effect waves-light #64b5f6 red darken-1">Hire Me</button>
+                                }
                                 
                                 {
                                     item.comments.map(record=>{
