@@ -4,18 +4,25 @@ import {Link} from 'react-router-dom'
 import ReadMoreReact from 'read-more-react'
 const Home  = ()=>{
     const [data,setData] = useState([])
+    const[searchfield,setSearchfield] = useState([])
     const {state,dispatch} = useContext(UserContext)
+      
+
     useEffect(()=>{
-       fetch('/allpost',{
-           headers:{
-               "Authorization":"Bearer "+localStorage.getItem("jwt")
+        fetch('/allpost',{
+            headers:{
+                "Authorization":"Bearer "+localStorage.getItem("jwt")
            }
-       }).then(res=>res.json())
+        }).then(res=>res.json())
        .then(result=>{
-           console.log(result)
-           setData(result.posts)
+          console.log(result)
+          
+            setData(result.posts)
+          
+           
        })
     },[])
+
 
     const likePost = (id)=>{
           fetch('/like',{
@@ -29,7 +36,7 @@ const Home  = ()=>{
               })
           }).then(res=>res.json())
           .then(result=>{
-                   //   console.log(result)
+                   //  1 console.log(result)
             const newData = data.map(item=>{
                 if(item._id==result._id){
                     return result
@@ -42,6 +49,7 @@ const Home  = ()=>{
               console.log(err)
           })
     }
+
     const unlikePost = (id)=>{
           fetch('/unlike',{
               method:"put",
@@ -81,7 +89,7 @@ const Home  = ()=>{
               })
           }).then(res=>res.json())
           .then(result=>{
-              console.log(result)
+              // console.log(result)
               const newData = data.map(item=>{
                 if(item._id==result._id){
                     return result
@@ -103,17 +111,33 @@ const Home  = ()=>{
             }
         }).then(res=>res.json())
         .then(result=>{
-            console.log(result)
+           // console.log(result)
             const newData = data.filter(item=>{
                 return item._id !== result._id
             })
             setData(newData)
+            
+
         })
+    
+    
+        
+        
+        
+     
+    
+        
+        
+        
+        
         
     }
    return (
        <div style={{backgroundColor:'#f5f0f0'}}>
-       <div  style={{display:'grid', gridTemplateColumns:'300px 300px 300px' ,gridGap:'150px', justifyItems:'center',marginLeft:"100px" }}>
+           
+            
+           
+       <div  style={{display:'grid', gridTemplateColumns:'50% 50%' , justifyItems:'center' }}>
            {
                data.map(item=>{
                    return(
@@ -128,7 +152,7 @@ const Home  = ()=>{
                             }</h5>
                             <h5> <i style={{fontFamily: "sans-serif"}}>Skill</i> : <span style={{color: "blue"}}>#{item.title}</span> </h5>
                             <div className="card-image">
-                                <img  style={{width: '100%', height: '200px'}}src={item.photo}/>
+                                <img  style={{width: '100%', height: '400px'}}src={item.photo}/>
                             </div>
                             <div className="card-content">
                             
