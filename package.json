@@ -2,7 +2,7 @@
   "name": "hook-up",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "app.js.js",
   "scripts": {
     "start": "node app.js"
   },
